@@ -1,0 +1,54 @@
+{
+    "events": [
+        {
+            "id": 1,
+            "title": "Tech Conference 2026",
+            "text": "A gathering of developers and tech enthusiasts discussing AI and web development trends.",
+            "images": [
+                "assets/image0.png",
+                "assets/image0.png"
+            ],
+            "viewCount": 0
+        },
+        {
+            "id": 2,
+            "title": "Music Festival Manila",
+            "text": "A weekend festival featuring local and international artists.",
+            "images": [
+                "assets/image0.png",
+                "assets/image0.png"
+            ],
+            "viewCount": 0
+        },
+        {
+            "id": 3,
+            "title": "Startup Pitch Night",
+            "text": "Entrepreneurs present their startup ideas to investors and mentors.",
+            "images": [
+                "assets/image0.png",
+                "assets/image0.png"
+            ],
+            "viewCount": 0
+        },
+        {
+            "id": 4,
+            "title": "Art Exhibition",
+            "text": "Showcasing modern and contemporary artworks from local artists.",
+            "images": [
+                "assets/image0.png",
+                "assets/image0.png"
+            ],
+            "viewCount": 0
+        },
+        {
+            "id": 5,
+            "title": "Coding Bootcamp",
+            "text": "Intensive training program for beginners in Flutter and backend development.",
+            "images": [
+                "assets/image0.png",
+                "assets/image0.png"
+            ],
+            "viewCount": 0
+        }
+    ]
+}
