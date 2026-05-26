@@ -5,6 +5,7 @@ import 'pages/events.dart';
 import 'pages/records.dart';
 import 'pages/tickets.dart';
 
+
 void main() {
   runApp(    ChangeNotifierProvider(
       create: (_) => ProviderClass(),

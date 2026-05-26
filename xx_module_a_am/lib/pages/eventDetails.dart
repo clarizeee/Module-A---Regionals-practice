@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:xx_module_a_am/models.dart';
 import 'package:xx_module_a_am/styles.dart';
 import 'package:gallery_image_viewer/gallery_image_viewer.dart';
+import 'package:xx_module_a_am/handlers.dart';
+import 'package:provider/provider.dart';
+
+
 class eventDetails extends StatefulWidget {
   final Event event;
   const eventDetails({super.key, required this.event});
@@ -10,7 +14,19 @@ class eventDetails extends StatefulWidget {
   State<eventDetails> createState() => _eventDetailState();
 }
 
+//TODO: IMPLEMENT THE VIEW COUNT ADDITION
+
 class _eventDetailState extends State<eventDetails> {
+
+  @override
+  void initState() {
+    super.initState();
+    Future.microtask(() {
+      context.read<ProviderClass>().addViewCount(widget.event);
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     final List<ImageProvider> images = widget.event.images.map((e)=> Image.asset(e).image).toList();

@@ -36,6 +36,13 @@ class ProviderClass extends ChangeNotifier {
       notifyListeners();
     }
 
+  Future<void> addViewCount(Event event) async {
+    final index = _events.indexWhere((e) => e.id == event.id);
+    _events[index] = _events[index].copyWith(viewCount: _events[index].viewCount + 1,);
+    await FileManager().writeJsonFile(_events,"events_data", "events");
+    notifyListeners();
+  }
+  
 }
 
 class FileManager {

@@ -1,3 +1,8 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:convert';
+
+import 'package:flutter/foundation.dart';
+
 class Event {
   final int id;
   final String title;
@@ -81,3 +86,61 @@ class Ticket {
   /// Alternative JSON with overrides
 }
 
+class Recording {
+  int id;
+  String name;
+  String path;
+  Recording({
+    required this.id,
+    required this.name,
+    required this.path,
+  });
+
+  Recording copyWith({
+    int? id,
+    String? name,
+    String? path,
+  }) {
+    return Recording(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      path: path ?? this.path,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'id': id,
+      'name': name,
+      'path': path,
+    };
+  }
+
+  factory Recording.fromMap(Map<String, dynamic> map) {
+    return Recording(
+      id: map['id'] as int,
+      name: map['name'] as String,
+      path: map['path'] as String,
+    );
+  }
+
+  Map<String, dynamic> toJson() => toMap();
+
+  factory Recording.fromJson(String source) => Recording.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() => 'Recording(id: $id, name: $name, path: $path)';
+
+  @override
+  bool operator ==(covariant Recording other) {
+    if (identical(this, other)) return true;
+  
+    return 
+      other.id == id &&
+      other.name == name &&
+      other.path == path;
+  }
+
+  @override
+  int get hashCode => id.hashCode ^ name.hashCode ^ path.hashCode;
+}
